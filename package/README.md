@@ -63,7 +63,7 @@ For a complete example of using `DynamicData` and `DynamicDataBuilder`, see belo
 import 'package:flutter/material.dart';
 
 // Simulate asynchronous API request
-Future<void> simulatedApiRequest() async {
+Future<String> simulatedApiRequest() async {
   return Future.delayed(const Duration(milliseconds: 300), () => 'API Response');
 }
 

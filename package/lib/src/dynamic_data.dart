@@ -17,14 +17,14 @@ abstract class DynamicData<T> with ChangeNotifier {
     required Future<T?> Function() futureBuilder,
     bool autoLoad = defaultAutoLoad,
   }) {
-    return DynamicFutureData<T>(futureBuilder: futureBuilder);
+    return DynamicFutureData<T>(futureBuilder: futureBuilder, autoLoad: autoLoad);
   }
 
   factory DynamicData.stream({
     required Future<Stream<T?>> Function() streamBuilder,
     bool autoLoad = defaultAutoLoad,
   }) {
-    return DynamicStreamData<T>(streamBuilder: streamBuilder);
+    return DynamicStreamData<T>(streamBuilder: streamBuilder, autoLoad: autoLoad);
   }
 
   final bool autoLoad;

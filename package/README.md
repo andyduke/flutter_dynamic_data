@@ -121,16 +121,16 @@ class _DemoWidgetState extends State<DemoWidget> {
 
 ## Typed data
 
-`DynamicData` makes it possible to load data of any type, including class objects. Because `DynamicData` is generic; the type is specified when instantiating the `DynamicData` object:
+`DynamicData` makes it possible to load data of any type, including class objects. Because `DynamicData` is generic, the type is specified when instantiating the `DynamicData` object:
 
 ```dart
-// Loading string
+// Load string
 final str = DynamicData<String>(...);
 
-// Loading JSON Map
+// Load JSON Map
 final json = DynamicData<Map<String, dynamic>>(...);
 
-// Loading UserInfo object
+// Load UserInfo object
 final json = DynamicData<UserInfo>(...);
 ```
 

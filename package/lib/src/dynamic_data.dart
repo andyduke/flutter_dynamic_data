@@ -11,20 +11,44 @@ typedef DynamicDataEmptyChecker<T> = bool Function(T? data);
 abstract class DynamicData<T> with ChangeNotifier {
   static const bool defaultAutoLoad = true;
 
-  static bool defaultEmptyDataChecker(Object? data) => (data == null);
+  static bool defaultEmptyDataChecker(Object? data) {
+    if (data is Iterable) {
+      return data.isEmpty;
+    } else if (data is String) {
+      return data.isEmpty;
+    } else if (data is Map) {
+      return data.isEmpty;
+    } else if (data is Set) {
+      return data.isEmpty;
+    } else if (data is Uint8List) {
+      return data.isEmpty;
+    } else {
+      return (data == null);
+    }
+  }
 
   factory DynamicData({
     required Future<T?> Function() futureBuilder,
     bool autoLoad = defaultAutoLoad,
+    DynamicDataEmptyChecker<T> emptyDataChecker = defaultEmptyDataChecker,
   }) {
-    return DynamicFutureData<T>(futureBuilder: futureBuilder, autoLoad: autoLoad);
+    return DynamicFutureData<T>(
+      futureBuilder: futureBuilder,
+      autoLoad: autoLoad,
+      emptyDataChecker: emptyDataChecker,
+    );
   }
 
   factory DynamicData.stream({
     required Future<Stream<T?>> Function() streamBuilder,
     bool autoLoad = defaultAutoLoad,
+    DynamicDataEmptyChecker<T> emptyDataChecker = defaultEmptyDataChecker,
   }) {
-    return DynamicStreamData<T>(streamBuilder: streamBuilder, autoLoad: autoLoad);
+    return DynamicStreamData<T>(
+      streamBuilder: streamBuilder,
+      autoLoad: autoLoad,
+      emptyDataChecker: emptyDataChecker,
+    );
   }
 
   final bool autoLoad;

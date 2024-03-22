@@ -8,6 +8,7 @@ class DynamicStreamData<T> extends DynamicData<T> {
   DynamicStreamData({
     required this.streamBuilder,
     super.autoLoad,
+    super.emptyDataChecker = DynamicData.defaultEmptyDataChecker,
   }) : super._();
 
   @override

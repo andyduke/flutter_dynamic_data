@@ -6,6 +6,7 @@ class DynamicFutureData<T> extends DynamicData<T> {
   DynamicFutureData({
     required this.futureBuilder,
     super.autoLoad,
+    super.emptyDataChecker = DynamicData.defaultEmptyDataChecker,
   }) : super._();
 
   @override

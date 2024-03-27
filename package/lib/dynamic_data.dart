@@ -8,5 +8,4 @@ export 'src/widgets/dynamic_data_widgets_typedefs.dart';
 export 'src/widgets/dynamic_data_defaults.dart';
 export 'src/widgets/dynamic_data_loading_view.dart';
 export 'src/widgets/dynamic_data_error_view.dart';
-export 'src/widgets/dynamic_data_builder_old.dart';
 export 'src/widgets/dynamic_data_builder.dart';

@@ -35,7 +35,7 @@ class _FutureListenableBuilderDemoViewState extends State<FutureListenableBuilde
                 (DynamicData<String> d) when d.isEmpty => DynamicDataDefaults.of(context).emptyBuilder(context),
                 (DynamicData<String> d) when d.isLoading => DynamicDataDefaults.of(context).loadingBuilder(context),
                 (DynamicData<String> d) when d.hasError =>
-                  DynamicDataDefaults.of(context).errorBuilder(context, d.error!),
+                  DynamicDataDefaults.of(context).errorBuilder(context, d.error!, d.reload),
                 (DynamicData<String> d) => Text('${d.data}'),
               };
             },

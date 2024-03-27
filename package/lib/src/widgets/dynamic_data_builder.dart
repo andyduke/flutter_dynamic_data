@@ -58,6 +58,6 @@ class DynamicDataBuilder<T> extends StatelessWidget {
   }
 
   Widget _buildError(BuildContext context, DynamicDataError error) {
-    return (errorBuilder ?? DynamicDataDefaults.of(context).errorBuilder).call(context, error);
+    return (errorBuilder ?? DynamicDataDefaults.of(context).errorBuilder).call(context, error, data.reload);
   }
 }

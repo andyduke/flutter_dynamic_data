@@ -3,5 +3,6 @@ import 'package:flutter/widgets.dart';
 
 typedef DynamicDataBuilderCallback<T> = Widget Function(BuildContext context, T data);
 typedef DynamicDataBuilderEmptyCallback = Widget Function(BuildContext context);
-typedef DynamicDataBuilderErrorCallback = Widget Function(BuildContext context, DynamicDataError error);
+typedef DynamicDataBuilderErrorCallback = Widget Function(
+    BuildContext context, DynamicDataError error, void Function() reload);
 typedef DynamicDataBuilderLoadingCallback = Widget Function(BuildContext context);

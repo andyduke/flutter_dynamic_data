@@ -7,7 +7,7 @@ class DynamicDataDefaults extends InheritedWidget {
   static DynamicDataBuilderEmptyCallback defaultEmptyBuilder = (context) => const SizedBox.shrink();
   static DynamicDataBuilderLoadingCallback defaultLoadingBuilder = (context) => const DynamicDataLoadingView();
   static DynamicDataBuilderErrorCallback defaultErrorBuilder =
-      (context, error) => DynamicDataErrorView(error: error.error, stackTrace: error.stackTrace);
+      (context, error, reload) => DynamicDataErrorView(error: error.error, stackTrace: error.stackTrace);
 
   static DynamicDataDefaultValues defaults = DynamicDataDefaultValues(
     emptyBuilder: defaultEmptyBuilder,
